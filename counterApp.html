@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- <h1>Counting App</h1>
+<h2 class="total"></h2>
+<button onclick="adding()">+</button>
+<button onclick="substract()">-</button> -->
+
+ <button id="btn">Adding</button>
+  <button id="btnn">Subtract</button>
+    <p>
+        Button Clicked <span id="display">0</span> Times
+    </p>
+    <script>
+        // let count=0
+        // function adding(){
+        //     document.getElementsByClassName("total").innerHtml
+        //     count=count++
+        // }
+        // function substract(){
+        //     document.getElementsByClassName("total").innerHtml
+        //     count=count--
+        // }
+
+            let count = 0;
+        let btn = document.getElementById("btn");
+        let btnn = document.getElementById("btnn");
+        let disp = document.getElementById("display");
+        
+        btn.onclick = function () {
+                    count++;
+        disp.innerHTML = count;
+        }
+        btnn.onclick = function () {
+                    count--;
+        disp.innerHTML = count;
+        }
+    </script>
+</body>
+</html>

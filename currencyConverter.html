@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <label for="">Indian rupees=</label>
+    <input type="text" id="one"><br>
+    <label for="">American Dollar=</label>
+    <input type="text" id="two"><br>
+    <button onclick="aa()"  >Submit</button>
+
+    <script>
+       
+        function aa(){
+             let a=document.getElementById("one").value
+            document.getElementById("two").value=a*85
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todo list</h1>
+    <input type="text" id="field">
+     <button onclick="aa()">add</button>
+     <ol id="oll">
+        
+     </ol>
+
+    <script>
+        function aa(){
+            let test=document.getElementById("field").value
+            let c=document.createElement("li")
+            let d=document.createElement("button")
+            d.innerHTML="remove"
+            d.onclick=bb
+            c.innerHTML=test
+            document.getElementById("oll").append(c)
+            document.getElementById("oll").append(d)
+            function bb(){
+                c.remove()
+                d.remove()
+            }
+        }
+    </script>
+</body>
+</html>

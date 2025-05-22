@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            height: 50px;
+            width: 130px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body id="change">
+<button onclick="red()">redColor</button>
+<button onclick="blue()">blueColor</button>
+<button onclick="white()">whiteColor</button>
+
+
+    <script>
+        function red(){
+             document.getElementById("change").style.backgroundColor="red"
+        }
+        function blue(){
+             document.getElementById("change").style.backgroundColor="blue"
+        }
+        function white(){
+             document.getElementById("change").style.backgroundColor="white"
+        }
+       
+
+    </script>
+</body>
+</html>

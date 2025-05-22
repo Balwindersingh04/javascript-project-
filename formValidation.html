@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="signupForm" onsubmit="return validateForm()">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <span id="nameError" class="error"></span>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <span id="emailError" class="error"></span>
+  </div>
+   <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <span id="passwordError" class="error"></span>
+  </div>
+  <div>
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword">
+    <span id="confirmPasswordError" class="error"></span>
+  </div>
+  <button type="submit">Sign Up</button>
+</form>
+
+<script>
+function validateForm() {
+    let isValid = true;
+    resetErrors();
+
+    //Name Validation
+    if(document.getElementById("name").value == ""){
+        displayError("name", "Name is required");
+        isValid = false;
+    }
+
+    //Email Validation
+     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (document.getElementById("email").value == "") {
+        displayError("email", "Email is required");
+        isValid = false;
+    } else if (!emailRegex.test(document.getElementById("email").value)) {
+        displayError("email", "Invalid email format");
+        isValid = false;
+    }
+
+    //Password Validation
+    if (document.getElementById("password").value == "") {
+        displayError("password", "Password is required");
+        isValid = false;
+    } else if (document.getElementById("password").value.length < 6) {
+        displayError("password", "Password must be at least 6 characters long");
+        isValid = false;
+    }
+
+    //Confirm Password Validation
+    if (document.getElementById("confirmPassword").value == "") {
+        displayError("confirmPassword", "Confirm Password is required");
+        isValid = false;
+    } else if (document.getElementById("password").value != document.getElementById("confirmPassword").value) {
+        displayError("confirmPassword", "Passwords do not match");
+        isValid = false;
+    }
+  
+    return isValid;
+}
+
+function displayError(fieldId, message) {
+    document.getElementById(fieldId + "Error").textContent = message;
+}
+
+function resetErrors() {
+    let errors = document.getElementsByClassName("error");
+    for(let i = 0; i < errors.length; i++){
+        errors[i].textContent = "";
+    }
+}
+</script>
+</body>
+</html>
